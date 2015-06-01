@@ -1,0 +1,175 @@
+@font-face {
+  font-family: 'stymiebold';
+  src: url('../fonts/stymie-bold-webfont.eot');
+  src: url('../fonts/stymie-bold-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/stymie-bold-webfont.woff2') format('woff2'),
+  url('../fonts/stymie-bold-webfont.woff') format('woff'),
+  url('../fonts/stymie-bold-webfont.ttf') format('truetype'),
+  url('../fonts/stymie-bold-webfont.svg#stymiebold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  font-family: stymiebold;
+  font-weight: normal;
+}
+
+h1 {
+  display: inline;
+  border-bottom: 3px solid #263856;
+}
+
+.parallax {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 1px;
+  -webkit-perspective:1px;
+}
+
+.parallax_layer {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.parallax_layer_back {
+  transform: translateZ(-1px);
+  -webkit-transform: translateZ(-1px);
+  transform: translateZ(-1px) scale(2);
+}
+
+.parallax_layer_base {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+.home {
+  height: 100%;
+  left: 5%;
+  position: absolute;
+  width: 90%;
+}
+
+.container {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.devices {
+  background: url('../images/devices.png') no-repeat bottom right;
+  background-size: auto 80%;
+  height: 90%;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+
+  background: transparent;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  background-image: -webkit-radial-gradient(rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 1)), url('../images/background.jpg');
+  background-image: -o-radial-gradient(rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 1)), url('../images/background.jpg');
+  background-image: -moz-radial-gradient(rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 1)), url('../images/background.jpg');
+  background-image: radial-gradient(rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 1)), url('../images/background.jpg');
+}
+
+.content {
+  background-color: #f6f6f6;
+  height: 100%;
+  margin-top: 100vh;
+  width: 100%;
+}
+
+.button {
+  float: left;
+  display: block;
+  margin: 1em;
+  padding: 1em 2em;
+  border: none;
+  background: none;
+  color: inherit;
+  vertical-align: middle;
+  position: relative;
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  padding: 0;
+  -webkit-transition: border-color 0.3s, background-color 0.3s;
+  transition: border-color 0.3s, background-color 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  text-decoration: none;
+  border: 3px solid;
+  border-radius: 40px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.button > span {
+  vertical-align: middle;
+}
+
+.button::after {
+  content: attr(data-text);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  color: #fff;
+  -webkit-transform: translate3d(0, 25%, 0);
+  transform: translate3d(0, 25%, 0);
+}
+
+.button > span {
+  display: block;
+}
+
+.button::after,
+.button > span {
+  padding: 1em 2em;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.button:hover {
+  border-color: rgb(24, 160, 240);
+  background-color: rgba(61, 179, 244, 0.5);
+}
+
+.button:hover::after {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.button:hover > span {
+  opacity: 0;
+  -webkit-transform: translate3d(0, -25%, 0);
+  transform: translate3d(0, -25%, 0);
+}
